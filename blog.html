@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog – FitForge | Fitness Tips, Workouts & Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">FIT<span>FORGE</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="diet.html">Nutrition</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="index.html#programs">Programs</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#join" class="nav-cta">Start Free Trial</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero blog-page-hero">
+  <div class="blog-hero-bg">
+    <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1600&q=80" alt="Blog Hero"/>
+    <div class="blog-hero-overlay"></div>
+  </div>
+  <div class="blog-hero-content">
+    <div class="section-label">THE FITFORGE BLOG</div>
+    <h1>Knowledge is<br><em>Power</em></h1>
+    <p>Expert articles on training, nutrition, recovery, and the mindset shifts that fuel real transformation.</p>
+    <!-- Search Bar -->
+    <div class="blog-search">
+      <input type="text" placeholder="Search articles..." id="searchInput"/>
+      <button>🔍 Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER TABS -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-tabs" id="filterTabs">
+      <button class="filter-tab active" data-cat="all">All</button>
+      <button class="filter-tab" data-cat="training">Training</button>
+      <button class="filter-tab" data-cat="nutrition">Nutrition</button>
+      <button class="filter-tab" data-cat="mindset">Mindset</button>
+      <button class="filter-tab" data-cat="recovery">Recovery</button>
+      <button class="filter-tab" data-cat="lifestyle">Lifestyle</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED POST -->
+<section class="featured-post-section">
+  <div class="container">
+    <a href="https://health.clevelandclinic.org/progressive-overload" target="_blank" rel="noopener" class="featured-post">
+      <div class="featured-post-img">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80" alt="Featured"/>
+        <span class="featured-badge-label">Featured</span>
+      </div>
+      <div class="featured-post-content">
+        <span class="blog-cat">Training</span>
+        <h2>The Complete Guide to Progressive Overload: Why Most People Get It Wrong</h2>
+        <p>Progressive overload is the foundation of every successful training program. Yet 80% of gym-goers misapply it and plateau within weeks. Here's the science — and the fix.</p>
+        <div class="post-meta">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="Author"/>
+          <div>
+            <strong>Dr. Arjun Mehta</strong>
+            <span>Sports Physiologist · 12 min read</span>
+          </div>
+          <span class="post-date">March 28, 2025</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="blog-grid-section">
+  <div class="container">
+    <div class="blog-layout">
+      <!-- MAIN GRID -->
+      <div class="blog-main">
+        <h2 class="blog-section-heading">Latest Articles</h2>
+        <div class="blog-external-banner">
+          🔗 <span><strong>Real articles, real sources.</strong> All links open verified content from Healthline, Cleveland Clinic, NASM, Muscle & Strength, and other trusted fitness authorities.</span>
+        </div>
+        <div class="blog-grid" id="blogGrid">
+
+          <!-- Article 1 -->
+          <article class="blog-card" data-cat="training">
+            <a href="https://www.muscleandstrength.com/articles/progressive-overload-the-complete-guide" target="_blank" rel="noopener" class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=80" alt="Strength"/>
+              <span class="blog-cat">Training</span>
+            </a>
+            <div class="blog-card-body">
+              <h3><a href="https://www.muscleandstrength.com/articles/progressive-overload-the-complete-guide" target="_blank" rel="noopener">Progressive Overload 101: What It Is & How to Apply It</a></h3>
+              <p>These foundational principles form the backbone of every elite strength program. Learn the science and start applying progressive overload correctly.</p>
+              <div class="card-meta">
+                <span>Muscle & Strength</span>
+                <span>·</span>
+                <span>8 min read</span>
+                <span>·</span>
+                <span>Jan 16, 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-card" data-cat="nutrition">
+            <a href="https://www.healthline.com/nutrition/eat-before-workout" target="_blank" rel="noopener" class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Nutrition"/>
+              <span class="blog-cat blog-cat--green">Nutrition</span>
+            </a>
+            <div class="blog-card-body">
+              <h3><a href="https://www.healthline.com/nutrition/eat-before-workout" target="_blank" rel="noopener">Pre & Post Workout Nutrition: The Definitive Guide</a></h3>
+              <p>What you eat before and after training determines your results. Healthline's science-backed protocol covers exactly what to eat and when.</p>
+              <div class="card-meta">
+                <span>Healthline</span>
+                <span>·</span>
+                <span>11 min read</span>
+                <span>·</span>
+                <span>Dec 12, 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-card" data-cat="mindset">
+            <a href="https://sezarroverseas.com/fitness-tips-2025-science-backed-strategies/" target="_blank" rel="noopener" class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Mindset"/>
+              <span class="blog-cat blog-cat--purple">Mindset</span>
+            </a>
+            <div class="blog-card-body">
+              <h3><a href="https://sezarroverseas.com/fitness-tips-2025-science-backed-strategies/" target="_blank" rel="noopener">17 Science-Backed Fitness Strategies That Actually Work</a></h3>
+              <p>Consistency beats intensity every time. These science-backed habits separate people who reach their goals from those who plateau.</p>
+              <div class="card-meta">
+                <span>Sezarr Overseas</span>
+                <span>·</span>
+                <span>7 min read</span>
+                <span>·</span>
+                <span>Nov 23, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="blog-card" data-cat="recovery">
+            <a href="https://fitbosspro.com/sleep-mindset-fitness-2026" target="_blank" rel="noopener" class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80" alt="Recovery"/>
+              <span class="blog-cat blog-cat--orange">Recovery</span>
+            </a>
+            <div class="blog-card-body">
+              <h3><a href="https://fitbosspro.com/sleep-mindset-fitness-2026" target="_blank" rel="noopener">Sleep & Mindset: The Hidden Drivers of Fitness Results</a></h3>
+              <p>You can't out-train poor sleep. The 2026 research is clear — sleep and mindset are the foundation every great physique is built on.</p>
+              <div class="card-meta">
+                <span>FitBoss Pro</span>
+                <span>·</span>
+                <span>9 min read</span>
+                <span>·</span>
+                <span>Feb 26, 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="blog-card" data-cat="training">
+            <a href="https://www.healthline.com/nutrition/benefits-of-hiit" target="_blank" rel="noopener" class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="HIIT"/>
+              <span class="blog-cat">Training</span>
+            </a>
+            <div class="blog-card-body">
+              <h3><a href="https://www.healthline.com/nutrition/benefits-of-hiit" target="_blank" rel="noopener">HIIT Benefits: 7 Reasons to Try High-Intensity Interval Training</a></h3>
+              <p>HIIT may offer the same health benefits as regular exercise in less time, and helps reduce body fat, heart rate, and blood pressure. Here's the science.</p>
+              <div class="card-meta">
+                <span>Healthline</span>
+                <span>·</span>
+                <span>10 min read</span>
+                <span>·</span>
+                <span>May 29, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="blog-card" data-cat="lifestyle">
+            <a href="https://onfitnessmag.com/more/fitness-trends-2025-shaping-2026" target="_blank" rel="noopener" class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="Lifestyle"/>
+              <span class="blog-cat blog-cat--blue">Lifestyle</span>
+            </a>
+            <div class="blog-card-body">
+              <h3><a href="https://onfitnessmag.com/more/fitness-trends-2025-shaping-2026" target="_blank" rel="noopener">Fitness Trends 2025: How the Industry Is Shaping 2026</a></h3>
+              <p>Recovery, longevity, and mental wellness are now the industry's foundation. Here's how the biggest shifts of 2025 will reshape how you train in 2026.</p>
+              <div class="card-meta">
+                <span>OnFitness Magazine</span>
+                <span>·</span>
+                <span>6 min read</span>
+                <span>·</span>
+                <span>Dec 20, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 7 -->
+          <article class="blog-card" data-cat="nutrition">
+            <a href="https://blog.nasm.org/workout-and-nutrition-timing" target="_blank" rel="noopener" class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80" alt="Meal Prep"/>
+              <span class="blog-cat blog-cat--green">Nutrition</span>
+            </a>
+            <div class="blog-card-body">
+              <h3><a href="https://blog.nasm.org/workout-and-nutrition-timing" target="_blank" rel="noopener">Nutrient Timing: What to Eat Before and After a Workout</a></h3>
+              <p>Timing your meals around training can optimize performance and recovery. NASM breaks down the exact science of nutrient timing for every goal.</p>
+              <div class="card-meta">
+                <span>NASM Blog</span>
+                <span>·</span>
+                <span>14 min read</span>
+                <span>·</span>
+                <span>2025</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 8 -->
+          <article class="blog-card" data-cat="recovery">
+            <a href="https://www.uhhospitals.org/blog/articles/2025/08/progressive-overload" target="_blank" rel="noopener" class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="Stretching"/>
+              <span class="blog-cat blog-cat--orange">Recovery</span>
+            </a>
+            <div class="blog-card-body">
+              <h3><a href="https://www.uhhospitals.org/blog/articles/2025/08/progressive-overload" target="_blank" rel="noopener">The Secret to Building Muscle Strength That Lasts</a></h3>
+              <p>University Hospitals' physical therapists reveal why progressive overload and proper recovery go hand in hand for lifelong strength.</p>
+              <div class="card-meta">
+                <span>University Hospitals</span>
+                <span>·</span>
+                <span>5 min read</span>
+                <span>·</span>
+                <span>Aug 21, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 9 -->
+          <article class="blog-card" data-cat="mindset">
+            <a href="https://www.trainerize.com/blog/wellness-trends/" target="_blank" rel="noopener" class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=80" alt="Goal Setting"/>
+              <span class="blog-cat blog-cat--purple">Mindset</span>
+            </a>
+            <div class="blog-card-body">
+              <h3><a href="https://www.trainerize.com/blog/wellness-trends/" target="_blank" rel="noopener">Top 10 Wellness Trends 2025: What's Actually Working</a></h3>
+              <p>From sauna culture to mindfulness-led training — here are the wellness shifts fitness professionals say are producing the best real-world results.</p>
+              <div class="card-meta">
+                <span>ABC Trainerize Blog</span>
+                <span>·</span>
+                <span>9 min read</span>
+                <span>·</span>
+                <span>Nov 10, 2025</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <!-- Load More -->
+        <div class="load-more-wrap">
+          <button class="btn-primary" id="loadMore">Load More Articles</button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="blog-sidebar">
+        <!-- Newsletter -->
+        <div class="sidebar-widget widget-newsletter">
+          <h4>Join the FitForge Community</h4>
+          <p>Get weekly expert tips, exclusive workout plans, and nutrition guides — free.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your email address"/>
+            <button class="btn-primary">Subscribe</button>
+          </div>
+          <span class="newsletter-note">No spam. Unsubscribe anytime.</span>
+        </div>
+
+        <!-- Popular Posts -->
+        <div class="sidebar-widget">
+          <h4>Most Popular</h4>
+          <div class="popular-posts">
+            <a href="https://health.clevelandclinic.org/progressive-overload" target="_blank" rel="noopener" class="popular-post">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=120&q=80" alt=""/>
+              <div>
+                <span class="popular-cat">Training</span>
+                <p>Progressive Overload Guide – Cleveland Clinic</p>
+              </div>
+            </a>
+            <a href="https://www.healthline.com/nutrition/eat-before-workout" target="_blank" rel="noopener" class="popular-post">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=120&q=80" alt=""/>
+              <div>
+                <span class="popular-cat">Nutrition</span>
+                <p>Pre & Post Workout Nutrition – Healthline</p>
+              </div>
+            </a>
+            <a href="https://www.healthline.com/nutrition/benefits-of-hiit" target="_blank" rel="noopener" class="popular-post">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=120&q=80" alt=""/>
+              <div>
+                <span class="popular-cat">Training</span>
+                <p>7 Benefits of HIIT – Healthline</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="sidebar-widget">
+          <h4>Popular Tags</h4>
+          <div class="tags-cloud">
+            <a href="#">#Strength</a><a href="#">#HIIT</a><a href="#">#WeightLoss</a>
+            <a href="#">#Nutrition</a><a href="#">#Recovery</a><a href="#">#Cardio</a>
+            <a href="#">#Protein</a><a href="#">#Mindset</a><a href="#">#MealPrep</a>
+            <a href="#">#Yoga</a><a href="#">#Mobility</a><a href="#">#Transformation</a>
+          </div>
+        </div>
+
+        <!-- Meet the Team -->
+        <div class="sidebar-widget">
+          <h4>Meet Our Experts</h4>
+          <div class="expert-list">
+            <div class="expert-item">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="Dr. Arjun"/>
+              <div>
+                <strong>Dr. Arjun Mehta</strong>
+                <span>Sports Physiologist</span>
+              </div>
+            </div>
+            <div class="expert-item">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Dr. Priya"/>
+              <div>
+                <strong>Dr. Priya Sharma</strong>
+                <span>Certified Dietitian</span>
+              </div>
+            </div>
+            <div class="expert-item">
+              <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=80&q=80" alt="Coach Ravi"/>
+              <div>
+                <strong>Coach Ravi Singh</strong>
+                <span>Head Strength Coach</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2>Ready to Transform?</h2>
+        <p>Apply what you've read with a personalized plan built just for you.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="index.html#join" class="btn-primary">Start Free Trial</a>
+        <a href="diet.html" class="btn-ghost">Explore Nutrition →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo logo-light">FIT<span>FORGE</span></a>
+      <p>Your ultimate platform for fitness, nutrition, and wellness.</p>
+      <div class="socials">
+        <a href="#">📘</a><a href="#">📸</a><a href="#">🐦</a><a href="#">▶️</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="index.html#programs">Programs</a></li>
+        <li><a href="diet.html">Nutrition</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#join">Pricing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Coaches</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 FitForge Inc. All rights reserved.</p>
+    <p>Made with ❤️ for fitness enthusiasts worldwide</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+// Filter Tabs
+const tabs = document.querySelectorAll('.filter-tab');
+const cards = document.querySelectorAll('.blog-card');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    cards.forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

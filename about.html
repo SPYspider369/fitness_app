@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About FitForge – Our Mission, Team & Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── ABOUT PAGE ───────────────────── */
+    .about-hero {
+      background: var(--dark);
+      padding: 160px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: 'FITFORGE';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 22vw;
+      color: rgba(255,255,255,0.02);
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .about-hero .section-label { color: rgba(255,255,255,0.4); display: flex; justify-content: center; }
+    .about-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .about-hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.55);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* MISSION */
+    .mission-section {
+      padding: 120px 0;
+      background: var(--white);
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .mission-img { position: relative; }
+    .mission-img img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      height: 560px;
+    }
+    .mission-img::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 60%;
+      height: 60%;
+      background: var(--lime);
+      border-radius: 20px;
+      z-index: -1;
+    }
+    .mission-content .section-label { }
+    .mission-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+      line-height: 1.05;
+    }
+    .mission-content p {
+      font-size: 16px;
+      color: var(--grey);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .mission-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .pillar {
+      background: var(--grey-light);
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid var(--lime);
+    }
+    .pillar strong { display: block; font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .pillar span { font-size: 13px; color: var(--grey); }
+
+    /* VALUES */
+    .values-section {
+      padding: 100px 0;
+      background: var(--dark);
+    }
+    .values-section .section-label { color: rgba(255,255,255,0.4); }
+    .values-section .section-title { color: var(--white); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .value-card {
+      background: var(--card-dark);
+      border-radius: var(--radius);
+      padding: 40px;
+      border-top: 3px solid var(--lime);
+      transition: var(--transition);
+    }
+    .value-card:hover { transform: translateY(-4px); }
+    .value-icon { font-size: 40px; margin-bottom: 20px; }
+    .value-card h3 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .value-card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+    /* TEAM */
+    .team-section {
+      padding: 120px 0;
+      background: var(--white);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+    .team-card {
+      text-align: center;
+      transition: var(--transition);
+    }
+    .team-card:hover { transform: translateY(-6px); }
+    .team-card:hover .team-img img { transform: scale(1.05); }
+    .team-img {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .team-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.4s ease;
+    }
+    .team-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--lime);
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+    .team-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .team-card .role { font-size: 13px; color: var(--lime-dark); font-weight: 600; margin-bottom: 10px; }
+    .team-card .bio { font-size: 13px; color: var(--grey); line-height: 1.6; margin-bottom: 16px; }
+    .team-socials { display: flex; justify-content: center; gap: 8px; }
+    .team-socials a {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+      background: var(--grey-light);
+      border-radius: 50%;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .team-socials a:hover { background: var(--black); color: var(--lime); }
+
+    /* NUMBERS */
+    .numbers-section {
+      background: var(--lime);
+      padding: 80px 0;
+    }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      text-align: center;
+    }
+    .number-item {
+      padding: 20px;
+      border-right: 1px solid rgba(0,0,0,0.1);
+    }
+    .number-item:last-child { border-right: none; }
+    .number-item strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      letter-spacing: 0.02em;
+      color: var(--black);
+    }
+    .number-item span { font-size: 13px; color: rgba(0,0,0,0.55); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* CONTACT CTA */
+    .contact-section {
+      background: var(--dark);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .contact-section p { color: rgba(255,255,255,0.5); font-size: 17px; margin-bottom: 40px; }
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .contact-card {
+      background: var(--card-dark);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      transition: var(--transition);
+    }
+    .contact-card:hover { border: 1px solid var(--lime); transform: translateY(-4px); }
+    .contact-card .icon { font-size: 32px; margin-bottom: 12px; }
+    .contact-card h4 { color: var(--white); font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .contact-card p { color: rgba(255,255,255,0.4); font-size: 13px; }
+    .contact-card a { color: var(--lime); font-size: 13px; font-weight: 600; }
+
+    @media (max-width: 1024px) {
+      .mission-grid { grid-template-columns: 1fr; }
+      .mission-img::after { display: none; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .numbers-grid { grid-template-columns: 1fr 1fr; }
+      .number-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
+      .contact-cards { grid-template-columns: 1fr; max-width: 400px; }
+    }
+    @media (max-width: 768px) {
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .mission-pillars { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">FIT<span>FORGE</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="diet.html">Nutrition</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#programs">Programs</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+    <a href="index.html#join" class="nav-cta">Start Free Trial</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="container">
+    <div class="section-label">OUR STORY</div>
+    <h1>Built by Athletes,<br><em>For Athletes</em></h1>
+    <p>FitForge was born in 2019 from a simple belief — everyone deserves access to world-class fitness coaching, nutrition science, and community. No gym required.</p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-section">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-img">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Mission"/>
+      </div>
+      <div class="mission-content">
+        <div class="section-label">OUR MISSION</div>
+        <h2>Democratize<br>World-Class <em>Fitness</em></h2>
+        <p>We believe the gap between knowing what to do and actually doing it is the biggest obstacle in fitness. FitForge closes that gap with AI-powered personalization, expert human coaching, and a community that holds you accountable.</p>
+        <p>Founded in Mumbai in 2019, we've grown from a scrappy 5-person startup to a global team of 120+ coaches, nutritionists, engineers, and designers — all united by a single obsession: making fitness transformation accessible to every person on Earth.</p>
+        <div class="mission-pillars">
+          <div class="pillar"><strong>Science-First</strong><span>Every plan is backed by peer-reviewed research</span></div>
+          <div class="pillar"><strong>Human-Centered</strong><span>Real coaches behind every recommendation</span></div>
+          <div class="pillar"><strong>Inclusive</strong><span>Designed for every body, age, and fitness level</span></div>
+          <div class="pillar"><strong>Accountable</strong><span>Community and tracking keep you on track</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="container">
+    <div class="section-label">OUR VALUES</div>
+    <h2 class="section-title">What We<br><em>Stand For</em></h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🔬</div>
+        <h3>Evidence Over Hype</h3>
+        <p>We reject fitness fads and shortcuts. Every feature, plan, and recommendation is grounded in peer-reviewed science and validated by certified experts.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Community First</h3>
+        <p>Fitness is better together. Our challenges, leaderboards, and live events turn individual journeys into shared victories that motivate the whole tribe.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">♾️</div>
+        <h3>Sustainable Progress</h3>
+        <p>We build habits, not crash diets. Our programs are designed for the long game — 5 years from now, not just 5 weeks.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌍</div>
+        <h3>Radical Accessibility</h3>
+        <p>World-class coaching shouldn't cost ₹50,000/month. We make elite-level guidance available to everyone with a smartphone.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h3>Privacy & Trust</h3>
+        <p>Your health data is yours. We never sell it, never share it, and follow the strictest data security standards globally.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🚀</div>
+        <h3>Relentless Innovation</h3>
+        <p>We ship features weekly. Our team is obsessed with finding new ways technology can make fitness smarter, faster, and more personalized.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="section-label">THE TEAM</div>
+    <h2 class="section-title">Meet the Experts<br>Behind <em>FitForge</em></h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-img">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Arjun"/>
+          <span class="team-badge">Founder & CEO</span>
+        </div>
+        <h3>Arjun Mehta</h3>
+        <div class="role">Co-Founder & Sports Physiologist</div>
+        <p class="bio">PhD in Sports Science from IIT Bombay. Former national-level sprinter. Built FitForge after seeing too many people quit fitness due to poor guidance.</p>
+        <div class="team-socials"><a href="#">in</a><a href="#">𝕏</a></div>
+      </div>
+      <div class="team-card">
+        <div class="team-img">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Priya"/>
+          <span class="team-badge">Head of Nutrition</span>
+        </div>
+        <h3>Dr. Priya Sharma</h3>
+        <div class="role">Certified Registered Dietitian</div>
+        <p class="bio">RD with 12 years of clinical experience. Specializes in sports nutrition and metabolic health. Designed all of FitForge's meal frameworks.</p>
+        <div class="team-socials"><a href="#">in</a><a href="#">𝕏</a></div>
+      </div>
+      <div class="team-card">
+        <div class="team-img">
+          <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=400&q=80" alt="Ravi"/>
+          <span class="team-badge">Head Coach</span>
+        </div>
+        <h3>Ravi Singh</h3>
+        <div class="role">CSCS Certified Strength Coach</div>
+        <p class="bio">Trained over 3,000 athletes across 20+ sports. Former strength coach for a Premier League football academy. Leads all training program design.</p>
+        <div class="team-socials"><a href="#">in</a><a href="#">𝕏</a></div>
+      </div>
+      <div class="team-card">
+        <div class="team-img">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Neha"/>
+          <span class="team-badge">Head of Mindset</span>
+        </div>
+        <h3>Neha Kapoor</h3>
+        <div class="role">Sports Psychologist & Wellness Coach</div>
+        <p class="bio">MSc in Applied Sport Psychology. Helps FitForge members build the mental resilience and behavioral habits that make physical transformation stick.</p>
+        <div class="team-socials"><a href="#">in</a><a href="#">𝕏</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="numbers-section">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="number-item"><strong>2019</strong><span>Founded in Mumbai</span></div>
+      <div class="number-item"><strong>120+</strong><span>Team Members</span></div>
+      <div class="number-item"><strong>47</strong><span>Countries Served</span></div>
+      <div class="number-item"><strong>₹0</strong><span>Investor Money Spent on Ads</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-label" style="color:rgba(255,255,255,0.4);display:flex;justify-content:center">GET IN TOUCH</div>
+    <h2>Let's Build Something<br><em>Together</em></h2>
+    <p>Whether you're a potential partner, press, or just have a question — we'd love to hear from you.</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="icon">📧</div>
+        <h4>General Enquiries</h4>
+        <p>Questions about our platform or services</p>
+        <a href="mailto:hello@fitforge.in">hello@fitforge.in</a>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📰</div>
+        <h4>Press & Media</h4>
+        <p>Interview requests and press kit</p>
+        <a href="mailto:press@fitforge.in">press@fitforge.in</a>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🤝</div>
+        <h4>Partnerships</h4>
+        <p>Brand collaborations and affiliate program</p>
+        <a href="mailto:partners@fitforge.in">partners@fitforge.in</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo logo-light">FIT<span>FORGE</span></a>
+      <p>Your ultimate platform for fitness, nutrition, and wellness.</p>
+      <div class="socials">
+        <a href="#" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" title="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+        <a href="#" title="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="index.html#programs">Programs</a></li>
+        <li><a href="diet.html">Nutrition</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#join">Pricing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#team">Our Coaches</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="about.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 FitForge Inc. All rights reserved. · Registered in India</p>
+    <p>Built with ❤️ for 500K+ fitness enthusiasts worldwide</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
